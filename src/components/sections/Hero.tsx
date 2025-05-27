@@ -62,16 +62,34 @@ export function Hero() {
               </div>
               
               <div className="py-4 space-y-4">
+                <div className="chat-bubble chat-bubble-user">
+                  <p>Como tá minha lista de compras?</p>
+                </div>
+
                 <div className="chat-bubble chat-bubble-bot">
-                  <p>Aqui é <strong>Rabugento, o assistente</strong> 😎. Você está iniciando seu período de testes (<strong>TRIAL</strong>) de 30 dias ⏳ ou 50 interações, o que vier primeiro.</p>
+                  <p>Sua lista de compras até agora:</p>
+                  <ul>
+                  <li> 🥔 Batata inglesa</li>
+                  <li> 🧴 Molho inglês</li>
+                  <li> 🥛 Leite condensado</li>
+                  <li> 🥤 Coca-Cola Zero</li>
+                  </ul>
                 </div>
                 
                 <div className="chat-bubble chat-bubble-user">
-                  <p>Preciso controlar meus gastos. Como você pode me ajudar?</p>
+                  <p>Me lembra do dentista amanhã às 10h</p>
                 </div>
                 
                 <div className="chat-bubble chat-bubble-bot">
-                  <p>Simples. Se você gastou R$ 10 na padaria, diga "gastei 10 pilas na padaria" e eu registro. Pergunte "quanto gastei este mês?" e eu mostro por categoria. Sem frescura, direto ao ponto. 💰</p>
+                  <p>Claro! Vou te lembrar do dentista amanhã às 10h.</p>
+                </div>
+
+                <div className="chat-bubble chat-bubble-user">
+                  <p>Gastei R$ 180,00 de combustível</p>
+                </div>
+
+                <div className="chat-bubble chat-bubble-bot">
+                  <p>Registrado! Seus gastos totais neste mês são de R$ 1.254,81.</p>
                 </div>
               </div>
             </div>
