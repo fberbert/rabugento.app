@@ -1,5 +1,5 @@
 import React from 'react';
-import { Smartphone, DollarSign, CheckSquare, Clock, Search } from 'lucide-react';
+import { DollarSign, CheckSquare, Clock, Search } from 'lucide-react';
 
 export function Features() {
   const features = [
@@ -49,7 +49,7 @@ export function Features() {
               <p className="text-gray-600 dark:text-gray-400 mb-4">{feature.description}</p>
               <div className="mt-auto bg-gray-100 dark:bg-gray-800 p-3 rounded-lg w-full">
                 <p className="text-sm font-medium text-gray-800 dark:text-gray-300">
-                  <span className="text-blue-800 dark:text-blue-400">»</span> "{feature.example}"
+                  <span className="text-blue-800 dark:text-blue-400">»</span> &quot;{feature.example}&quot;
                 </p>
               </div>
             </div>
