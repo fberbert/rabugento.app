@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'rabugento-app',
+      name: 'rabugento.app',
       cwd: '/home/fabio/projetos/rabugento.app',
       script: 'node_modules/.bin/next',
       args: 'start -p 3011',
