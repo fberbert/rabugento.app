@@ -1,7 +1,12 @@
+"use client";
+
 import React from 'react';
 import { MessageCircle, Shield, Users, XCircle } from 'lucide-react';
+import useSectionInView from "@/lib/useSectionInView";
 
-export function Differentials() {
+export default function Differentials() {
+  const { ref } = useSectionInView("#differentials", 0.5);
+
   const differentials = [
     {
       icon: <MessageCircle className="h-8 w-8 text-blue-800 dark:text-blue-400" />,
@@ -26,7 +31,7 @@ export function Differentials() {
   ];
 
   return (
-    <section className="bg-white dark:bg-gray-900 py-16">
+    <section className="bg-white dark:bg-gray-900 py-16" ref={ref} id="differentials">
       <div className="container-section">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Por que o Rabugento é diferente</h2>

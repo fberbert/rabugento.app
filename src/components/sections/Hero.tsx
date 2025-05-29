@@ -1,11 +1,16 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { MessageSquare } from 'lucide-react';
+import useSectionInView from "@/lib/useSectionInView";
 
-export function Hero() {
+export default function Hero() {
+  const { ref } = useSectionInView("#home", 0.5);
+
   return (
-    <section className="bg-gradient-to-b from-blue-50 to-white dark:from-blue-950 dark:to-gray-900">
+    <section ref={ref} className="bg-gradient-to-b from-blue-50 to-white dark:from-blue-950 dark:to-gray-900">
       <div className="container-section flex flex-col md:flex-row items-center gap-8 md:gap-12">
         <div className="flex-1 space-y-6">
           <div className="inline-block bg-blue-100 dark:bg-blue-900/30 px-4 py-1.5 rounded-full">
@@ -29,9 +34,6 @@ export function Hero() {
                 Comece seu Trial de 30 dias
               </Button>
             </a>
-            <Button variant="rabugentoOutline" size="xl" className="rounded-full">
-              Como funciona
-            </Button>
           </div>
           
           <div className="bg-white dark:bg-gray-800 rounded-lg p-3 inline-flex items-center shadow-md">

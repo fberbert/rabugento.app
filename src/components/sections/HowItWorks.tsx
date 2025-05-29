@@ -1,7 +1,11 @@
+"use client";
+
 import React from 'react';
 import { MessageSquare, Clock, Zap, Layers } from 'lucide-react';
+import useSectionInView from "@/lib/useSectionInView";
 
-export function HowItWorks() {
+export default function HowItWorks() {
+  const { ref } = useSectionInView("#how-it-works", 0.5);
   const steps = [
     {
       icon: <MessageSquare className="h-8 w-8 text-white" />,
@@ -26,7 +30,7 @@ export function HowItWorks() {
   ];
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-800 py-16">
+    <section className="bg-gray-50 dark:bg-gray-800 py-16" id="how-it-works" ref={ref}>
       <div className="container-section">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Como funciona</h2>

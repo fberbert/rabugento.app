@@ -1,8 +1,12 @@
+"use client";
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
+import useSectionInView from '@/lib/useSectionInView';
 
-export function Pricing() {
+export default function Pricing() {
+  const { ref } = useSectionInView('#pricing', 0.5);
   const features = [
     "Controle financeiro completo",
     "Listas de compras",
@@ -13,7 +17,7 @@ export function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="bg-gray-50 dark:bg-gray-800 py-16">
+    <section id="pricing" className="bg-gray-50 dark:bg-gray-800 py-16" ref={ref}>
       <div className="container-section">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Planos e Preços</h2>

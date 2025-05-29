@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import useSectionInView from '@/lib/useSectionInView';
 
 type FAQItemProps = {
   question: string;
@@ -9,10 +10,11 @@ type FAQItemProps = {
 };
 
 const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
+  const { ref } = useSectionInView("#faq", 0.5);
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className="border-b border-gray-200 dark:border-gray-700">
+    <div className="border-b border-gray-200 dark:border-gray-700" ref={ref} id="faq">
       <button
         className="flex justify-between items-center w-full py-4 text-left font-medium"
         onClick={() => setIsOpen(!isOpen)}
@@ -33,7 +35,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
   );
 };
 
-export function FAQ() {
+export default function FAQ() {
   const faqItems = [
     {
       question: "Como começar a usar o Rabugento?",

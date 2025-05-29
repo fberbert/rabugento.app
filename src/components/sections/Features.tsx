@@ -1,7 +1,12 @@
+"use client";
+
 import React from 'react';
 import { DollarSign, CheckSquare, Clock, Search } from 'lucide-react';
+import useSectionInView from "@/lib/useSectionInView";
 
-export function Features() {
+export default function Features() {
+  const { ref } = useSectionInView("#features", 0.5);
+
   const features = [
     {
       icon: <DollarSign className="h-10 w-10 text-blue-800 dark:text-blue-400" />,
@@ -30,7 +35,7 @@ export function Features() {
   ];
 
   return (
-    <section id="features" className="py-16 bg-white dark:bg-gray-900">
+    <section id="features" className="py-16 bg-white dark:bg-gray-900" ref={ref}>
       <div className="container-section">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Funcionalidades sem frescura</h2>
