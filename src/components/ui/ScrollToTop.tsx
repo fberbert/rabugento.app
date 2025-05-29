@@ -23,6 +23,8 @@ export default function ScrollToTop() {
         window.scrollTo({ top: 0, behavior: "smooth" });
         setActiveSection("#home");
         setTimeOfLastClick(Date.now());
+        // atualiza o hash do URL para #home
+        history.pushState({}, "", "#home");
       }}
       className="fixed bottom-6 right-6 w-11 h-11 rounded-full bg-primary-600 text-white shadow-lg flex items-center justify-center hover:bg-primary-700 transition"
     >

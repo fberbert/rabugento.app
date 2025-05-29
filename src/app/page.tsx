@@ -5,15 +5,13 @@ import Differentials from '@/components/sections/Differentials';
 import HowItWorks from '@/components/sections/HowItWorks';
 import Pricing from '@/components/sections/Pricing';
 import FAQ from '@/components/sections/FAQ';
-import Footer from '@/components/sections/Footer';
-import Header from '@/components/Header';
-import ScrollToTop from '@/components/ui/ScrollToTop';
+// import Footer from '@/components/sections/Footer';
+// import Header from '@/components/Header';
+// import ScrollToTop from '@/components/ui/ScrollToTop';
 
 export default function Home() {
   return (
     <>
-      <Header />
-
       <div className="min-h-screen">
         <Hero />
         <HowItWorks />
@@ -21,9 +19,6 @@ export default function Home() {
         <Differentials />
         <Pricing />
         <FAQ />
-        <Footer />
-
-        <ScrollToTop />
       </div>
     </>
     

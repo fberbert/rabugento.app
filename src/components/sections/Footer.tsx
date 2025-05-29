@@ -17,22 +17,22 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#features" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/#features" className="text-gray-400 hover:text-white transition-colors">
                   Funcionalidades
                 </Link>
               </li>
               <li>
-                <Link href="#pricing" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/#pricing" className="text-gray-400 hover:text-white transition-colors">
                   Preços
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/terms-of-use" className="text-gray-400 hover:text-white transition-colors">
                   Termos de Uso
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">
                   Política de Privacidade
                 </Link>
               </li>
@@ -45,7 +45,9 @@ export default function Footer() {
               Precisa de ajuda? Entre em contato conosco.
             </p>
             <p className="text-gray-400 mt-2">
-              suporte@rabugento.app
+              <a href="mailto:suporte@rabugento.app" className="hover:text-white transition-colors">
+                suporte@rabugento.app
+              </a>
             </p>
           </div>
         </div>

@@ -4,7 +4,10 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 
 import ActiveSectionContextProvider from "@/context/active-section-context";
+import Header from "@/components/Header";
+import Footer from "@/components/sections/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
+import CookieConsent from "@/components/CookieConsent";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const poppins = Poppins({
@@ -32,15 +35,22 @@ export default function RootLayout({
     <html lang="pt-BR" className="!scroll-smooth">
       <body className={`${inter.variable} ${poppins.variable} font-sans`}>
         <ActiveSectionContextProvider>
+          <Header />
 
           {/* Conteúdo da página */}
           {children}
 
           {/* Botão scroll-to-top */}
+          <Footer />
+
+          {/* Componente de rolagem para o topo */}
           <ScrollToTop />
+          {/* Consentimento de cookies */}
+          <CookieConsent />
+
+          {/* Rodapé */}
         </ActiveSectionContextProvider>
       </body>
     </html>
   );
 }
-
