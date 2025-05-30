@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import { MessageCircle, Shield, Users, XCircle } from "lucide-react";
+import { MessageCircle, Check, Users, ThumbsUp } from "lucide-react";
 
 const container = {
   hidden: { opacity: 0 },
@@ -20,7 +20,7 @@ const fadeUp = {
 
 export default function Differentials() {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: false });
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: false });
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
   const hash = "#differentials";
 
@@ -36,10 +36,10 @@ export default function Differentials() {
     {
       icon: <MessageCircle className="h-8 w-8 text-blue-800 dark:text-blue-400" />,
       title: "Personalidade Única",
-      description: "Direto e sarcástico como Dr. House. Sem enrolação, apenas resultados.",
+      description: "Direto e objetivo como todo bom rabugento. Sem enrolação, apenas resultados.",
     },
     {
-      icon: <Shield className="h-8 w-8 text-blue-800 dark:text-blue-400" />,
+      icon: <Check className="h-8 w-8 text-blue-800 dark:text-blue-400" />,
       title: "Simplicidade",
       description: "Tudo no WhatsApp, sem apps adicionais para instalar ou contas para criar.",
     },
@@ -49,9 +49,9 @@ export default function Differentials() {
       description: "Mantém histórico e entende fluxos de conversa, lembrando de suas preferências.",
     },
     {
-      icon: <XCircle className="h-8 w-8 text-blue-800 dark:text-blue-400" />,
+      icon: <ThumbsUp className="h-8 w-8 text-blue-800 dark:text-blue-400" />,
       title: "Versatilidade",
-      description: "Use comandos diretos ou converse naturalmente, como preferir.",
+      description: "Converse naturalmente, sem a necessidade de comandos complexos. O Rabugento entende você.",
     },
   ];
 
@@ -59,7 +59,7 @@ export default function Differentials() {
     <motion.section
       ref={ref}
       id="differentials"
-      className="bg-white dark:bg-gray-900 py-16"
+      className="bg-gradient-to-b to-blue-950 from-gray-900 pt-10 pb-2"
       initial="hidden"
       animate={controls}
       variants={container}
@@ -70,7 +70,8 @@ export default function Differentials() {
             Por que o Rabugento é diferente
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Um assistente com personalidade que resolve problemas reais.
+            Um assistente com personalidade que resolve problemas reais, diretamente no WhatsApp. 
+            Sem a necessidade de usar outros aplicativos ou criar contas.
           </p>
         </motion.div>
 

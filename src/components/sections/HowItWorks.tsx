@@ -4,7 +4,8 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import { MessageSquare, Clock, Zap, Layers } from "lucide-react";
+import { Clock, MessageCircle, MessagesSquare } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const container = {
   hidden: { opacity: 0 },
@@ -20,7 +21,7 @@ const fadeUp = {
 
 export default function HowItWorks() {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: false });
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: false });
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
   const hash = "#how-it-works";
 
@@ -34,7 +35,7 @@ export default function HowItWorks() {
 
   const steps = [
     {
-      icon: <MessageSquare className="h-8 w-8 text-white" />,
+      icon: <FaWhatsapp className="h-8 w-8 text-white" />,
       title: "Adicione o Rabugento",
       description:
         "Adicione o número do Rabugento aos seus contatos do WhatsApp.",
@@ -43,16 +44,16 @@ export default function HowItWorks() {
       icon: <Clock className="h-8 w-8 text-white" />,
       title: "Inicie uma conversa",
       description:
-        "Mande uma mensagem e comece seu período de trial de 30 dias.",
+        "Mande uma mensagem e comece seu período de teste de 30 dias.",
     },
     {
-      icon: <Zap className="h-8 w-8 text-white" />,
-      title: "Use comandos simples",
+      icon: <MessageCircle className="h-8 w-8 text-white" />,
+      title: "Converse naturalmente",
       description:
-        "Fale naturalmente ou use comandos diretos para cada função.",
+        "Fale naturalmente como se estivesse falando com um amigo.",
     },
     {
-      icon: <Layers className="h-8 w-8 text-white" />,
+      icon: <MessagesSquare className="h-8 w-8 text-white" />,
       title: "Receba respostas diretas",
       description:
         "Sem enrolação, apenas resultados práticos e eficientes.",
@@ -63,7 +64,7 @@ export default function HowItWorks() {
     <motion.section
       ref={ref}
       id="how-it-works"
-      className="bg-gray-50 dark:bg-gray-800 py-16"
+      className="bg-gradient-to-b to-blue-950 from-gray-900 pt-10 pb-2"
       initial="hidden"
       animate={controls}
       variants={container}

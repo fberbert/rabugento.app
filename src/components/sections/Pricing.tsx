@@ -21,7 +21,7 @@ const fadeUp = {
 
 export default function Pricing() {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: false });
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: false });
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
   const hash = "#pricing";
 
@@ -47,7 +47,7 @@ export default function Pricing() {
     <motion.section
       ref={ref}
       id="pricing"
-      className="bg-gray-50 dark:bg-gray-800 py-16"
+      className="bg-gradient-to-b from-blue-950 to-gray-900 pt-10 pb-2"
       initial="hidden"
       animate={controls}
       variants={container}

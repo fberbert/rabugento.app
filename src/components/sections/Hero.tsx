@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import ChatMock from "@/components/ui/ChatMock";
 
 const container = {
   hidden: { opacity: 0 },
@@ -21,7 +21,7 @@ const fadeUp = {
 
 export default function Hero() {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: false });
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: false });
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
   const hash = "#home";
 
@@ -37,7 +37,7 @@ export default function Hero() {
     <motion.section
       ref={ref}
       id="home"
-      className="bg-gradient-to-b from-blue-50 to-white dark:from-blue-950 dark:to-gray-900 py-16"
+      className="bg-gradient-to-b from-blue-950 to-gray-900 dark:from-blue-950 dark:to-gray-900 pt-10 pb-2"
       initial="hidden"
       animate={controls}
       variants={container}
@@ -70,7 +70,7 @@ export default function Hero() {
             variants={fadeUp}
           >
             Seu assistente pessoal direto e prático no WhatsApp. Controle
-            finanças, tarefas, lembretes e compras sem precisar instalar mais
+            finanças, tarefas, lembretes e compras sem precisar instalar 
             nada.
           </motion.p>
 
@@ -111,79 +111,8 @@ export default function Hero() {
         </motion.div>
 
         {/* Coluna do mock de chat */}
-        <motion.div className="flex-1 relative" variants={fadeUp}>
-          <div className="relative w-full max-w-md mx-auto">
-            <motion.div
-              className="bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-4 border border-gray-200 dark:border-gray-700"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.95 }}
-              transition={{ delay: 0.4 }}
-            >
-              <div className="flex items-center border-b border-gray-200 dark:border-gray-700 pb-3">
-                <div className="w-20 h-20 bg-blue-800 rounded-full flex items-center justify-center">
-                  <Image
-                    src="/images/rabugento-blue-no-text.svg"
-                    alt="Rabugento Avatar"
-                    width={80}
-                    height={80}
-                    className="rounded-full"
-                  />
-                </div>
-                <div className="ml-3">
-                  <p className="font-medium">Rabugento</p>
-                  <p className="text-xs text-gray-500">Assistente Pessoal</p>
-                </div>
-              </div>
-
-              <div className="py-4 space-y-4">
-                <motion.div
-                  className="chat-bubble chat-bubble-user"
-                  variants={fadeUp}
-                >
-                  <p>Como tá minha lista de compras?</p>
-                </motion.div>
-                <motion.div
-                  className="chat-bubble chat-bubble-bot"
-                  variants={fadeUp}
-                >
-                  <p>Sua lista de compras até agora:</p>
-                  <ul>
-                    <li>🥔 Batata inglesa</li>
-                    <li>🧴 Molho inglês</li>
-                    <li>🥛 Leite condensado</li>
-                    <li>🥤 Coca-Cola Zero</li>
-                  </ul>
-                </motion.div>
-                <motion.div
-                  className="chat-bubble chat-bubble-user"
-                  variants={fadeUp}
-                >
-                  <p>Me lembra do dentista amanhã às 10h</p>
-                </motion.div>
-                <motion.div
-                  className="chat-bubble chat-bubble-bot"
-                  variants={fadeUp}
-                >
-                  <p>Claro! Vou te lembrar do dentista amanhã às 10h.</p>
-                </motion.div>
-                <motion.div
-                  className="chat-bubble chat-bubble-user"
-                  variants={fadeUp}
-                >
-                  <p>Gastei R$ 180,00 de combustível</p>
-                </motion.div>
-                <motion.div
-                  className="chat-bubble chat-bubble-bot"
-                  variants={fadeUp}
-                >
-                  <p>
-                    Registrado! Seus gastos totais neste mês são de R$ 1.254,81.
-                  </p>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
+        <ChatMock />
+        
       </div>
     </motion.section>
   );

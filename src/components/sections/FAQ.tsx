@@ -24,7 +24,7 @@ type FAQItemProps = {
 };
 
 const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
-  const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: false });
+  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: false });
   const controls = useAnimation();
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
   const hash = "#faq";
@@ -74,7 +74,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
 
 export default function FAQ() {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: false });
+  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: false });
 
   useEffect(() => {
     controls.start(inView ? "show" : "hidden");
@@ -94,24 +94,25 @@ export default function FAQ() {
     {
       question: "Posso usar o Rabugento em grupos do WhatsApp?",
       answer:
-        "Atualmente, o Rabugento funciona apenas em conversas individuais para garantir a privacidade e personalização do serviço. O suporte para grupos está em desenvolvimento.",
+        "Atualmente, o Rabugento funciona apenas em conversas individuais para garantir a privacidade e personalização do serviço. Futuramente, pode haver suporte a grupos, mas não há previsão definida.",
     },
     {
       question: "Como cancelar o serviço?",
       answer:
-        "Para cancelar, basta enviar a mensagem 'cancelar assinatura' para o Rabugento. Você receberá uma confirmação e seu acesso continuará até o fim do período já pago.",
+        "Para cancelar, basta enviar a mensagem 'cancelar assinatura' para o Rabugento. Você receberá instruções de confirmação e seu acesso será encerrado no final do período já pago.",
     },
     {
-      question: "O que acontece após o período de trial?",
+      question: "O que acontece após o período de testes?",
       answer:
-        "Após o período de trial, você pode escolher um dos planos disponíveis para continuar usando o serviço. Se preferir não continuar, basta não fazer nada e o acesso será automaticamente encerrado.",
+        "Após o período de trial, você receberá uma mensagem do Rabugento informando que o período de teste terminou. A partir daí, você pode continuar usando o serviço com um dos planos disponíveis. Se não desejar continuar, basta não fazer nada e o acesso será automaticamente encerrado.",
     },
   ];
 
   return (
     <motion.section
       ref={ref}
-      className="bg-white dark:bg-gray-900 py-16"
+      id="faq"
+      className="bg-gradient-to-b to-blue-950 from-gray-900 pt-10 pb-2"
       initial="hidden"
       animate={controls}
       variants={container}

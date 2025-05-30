@@ -25,7 +25,7 @@ const fadeUp = {
 
 export default function Features() {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: false });
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: false });
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
   const hash = "#features";
 
@@ -45,7 +45,7 @@ export default function Features() {
       title: "Controle Financeiro",
       description:
         "Registre despesas e receitas, consulte transações do mês, veja totais por categoria e acompanhe seu saldo financeiro.",
-      example: "gastei 10 pilas na padaria",
+      example: "gastei 10 Reais na padaria",
     },
     {
       icon: (
@@ -72,7 +72,7 @@ export default function Features() {
       title: "Pesquisas na Internet",
       description:
         "Faça pesquisas rápidas usando comandos diretos, sem precisar sair do WhatsApp.",
-      example: "pesquisa previsão do tempo em São Paulo",
+      example: "qual a previsão do tempo em São Paulo amanhã?",
     },
   ];
 
@@ -80,7 +80,7 @@ export default function Features() {
     <motion.section
       ref={ref}
       id="features"
-      className="py-16 bg-white dark:bg-gray-900"
+      className="pt-10 pb-2 bg-gradient-to-b from-blue-950 to-gray-900 dark:from-blue-950 dark:to-gray-900"
       initial="hidden"
       animate={controls}
       variants={container}
