@@ -86,9 +86,11 @@ export default function ChatMock() {
           {bubbles.map((b, i) => (
             <motion.li
               key={i}
-              variants={b.user ? swipeFromRight : swipeFromLeft}
+              variants={b.user ? swipeFromLeft : swipeFromRight}
               className={
-                b.user ? "chat-bubble chat-bubble-user" : "chat-bubble chat-bubble-bot"
+                b.user 
+                  ? "chat-bubble chat-bubble-user mr-0 ml-[3rem]" 
+                  : "chat-bubble chat-bubble-bot ml-0 mr-[3rem]"
               }
             >
               <p>{b.text}</p>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function TermsOfUsePage() {
   return (
     <main className="container-section py-16">
-      <h1 className="text-3xl font-bold mb-6">Termos de Uso</h1>
+      <h1 className="text-3xl font-bold my-6">Termos de Uso</h1>
       <section className="max-w-none">
         <p className="mb-4">
           <strong>Última atualização:</strong> 29 de Maio de 2025

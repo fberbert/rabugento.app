@@ -71,7 +71,7 @@ export default function Hero() {
           >
             Seu assistente pessoal direto e prático no WhatsApp. Controle
             finanças, tarefas, lembretes e compras sem precisar instalar 
-            nada.
+            nada. Clique no botão abaixo e faça um teste.
           </motion.p>
 
           <motion.div
@@ -85,7 +85,7 @@ export default function Hero() {
               className="w-full flex justify-center items-center"
             >
               <motion.div
-                className="bg-blue-800 hover:bg-blue-700 text-white dark:hover:bg-blue-600 transition-colors duration-200 dark:bg-blue-800 rounded-lg inline-flex items-center shadow-md w-full justify-center h-[80px] p-3"
+                className="bg-green-800 hover:bg-green-700 text-white transition-colors duration-200 rounded-lg inline-flex items-center shadow-md w-full justify-center h-[80px] p-3"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
