@@ -22,7 +22,28 @@ export const metadata: Metadata = {
   description:
     "Assistente pessoal inteligente no WhatsApp para controle de finanças, tarefas, lembretes e listas de compras. Direto e sem enrolação.",
   icons: {
-    icon: "/favicon.ico",   // equivale ao <link rel="icon" …>
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "Rabugento.app | Seu assistente pessoal no WhatsApp",
+    description: "Assistente pessoal inteligente no WhatsApp para controle de finanças, tarefas, lembretes e listas de compras. Direto e sem enrolação.",
+    url: "https://rabugento.app",
+    siteName: "Rabugento.app",
+    images: [
+      {
+        url: "/images/rabugento-blue-no-text.svg",
+        width: 1200,
+        height: 630,
+        alt: "Logo Rabugento.app"
+      }
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rabugento.app | Seu assistente pessoal no WhatsApp",
+    description: "Assistente pessoal inteligente no WhatsApp para controle de finanças, tarefas, lembretes e listas de compras. Direto e sem enrolação.",
+    images: ["/images/rabugento-blue-no-text.svg"],
   },
 };
 
