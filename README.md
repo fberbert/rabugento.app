@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+ # Rabugento.app — Landing Page
 
-## Getting Started
+ **Rabugento.app** é um assistente pessoal inteligente operando via WhatsApp que ajuda você a:
 
-First, run the development server:
+ - Controlar suas finanças pessoais (despesas e receitas);
+ - Criar e gerenciar listas de compras;
+ - Agendar tarefas e lembretes;
+ - Realizar pesquisas e obter respostas diretas;
+ - Tudo sem instalar nada — basta enviar mensagens no WhatsApp.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ ## Visão Geral
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ Este repositório contém a landing page oficial de divulgação do Rabugento.app, desenvolvida com:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+ - Next.js 15 (App Router) e TypeScript  
+ - React 19 com Framer Motion para animações suaves  
+ - Tailwind CSS e class-variance-authority para estilização  
+ - Context API e react-intersection-observer para navegação por seções  
+ - Jest e React Testing Library para testes básicos  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+ ## Como Desenvolver
 
-## Learn More
+ 1. Clone este repositório  
+    ```bash
+    git clone https://github.com/SEU_USUARIO/rabugento-landing.git
+    ```
+ 2. Entre na pasta  
+    ```bash
+    cd rabugento-landing
+    ```
+ 3. Instale dependências  
+    ```bash
+    npm install
+    # ou
+    yarn install
+    ```
+ 4. Inicie em modo de desenvolvimento  
+    ```bash
+    npm run dev
+    ```
+    Acesse `http://localhost:3011` no navegador.
 
-To learn more about Next.js, take a look at the following resources:
+ ## Scripts Disponíveis
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ - `npm run dev` — inicia o servidor de desenvolvimento (porta 3011)  
+ - `npm run build` — gera o build de produção  
+ - `npm run start` — inicia o servidor em modo produção (porta 3011)  
+ - `npm run lint` — executa o ESLint  
+ - `npm test` — executa a suíte de testes (Jest)  
+ - `npm run test:watch` — executa testes em modo watch  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ ## Rodando Testes
 
-## Deploy on Vercel
+ ```bash
+ npm test
+ ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+ ## Estrutura do Projeto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ - `src/app` — páginas e layout global (Home, Termos de Uso, Política de Privacidade)  
+ - `src/components` — componentes de UI e seções da landing page  
+ - `src/context` — gerenciamento de estado de navegação por seção  
+ - `src/lib` — utilitários e hooks customizados  
+
+ ## Contribuição
+
+ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e PRs.
+
+ ## License
+
+ Este projeto está em domínio público conforme indicado no arquivo [LICENSE](LICENSE).
+
+ ## Contato
+
+ - Site oficial: https://rabugento.app  
+ - WhatsApp: +55 22 99978-0978  
+ - E-mail: suporte@rabugento.app  

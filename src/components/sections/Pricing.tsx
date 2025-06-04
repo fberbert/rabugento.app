@@ -111,11 +111,16 @@ export default function Pricing() {
             </div>
           </motion.div>
 
-          <motion.div className="mt-8 text-center" variants={fadeUp}>
-            <p className="text-gray-600 dark:text-gray-400">
-              Após o período de trial, planos a partir de{" "}
-              <span className="font-bold">R$ 19,90/mês</span>
-            </p>
+          <motion.div className="mt-2 text-center" variants={fadeUp}>
+             <p>Após o período de testes, assine por apenas:</p>
+             <div className="font-bold text-2xl py-1">
+               R$ 9,90/mês{" "}
+               <span className="line-through text-gray-600 text-lg ml-2">R$ 19,90</span>
+             </div>
+             <p>nos primeiros 6 meses.</p>
+             <div className="text-blue-400 pt-2 font-semibold text-sm">
+               Promoção de lançamento para quem assinar até 30/06/2025.
+             </div>
           </motion.div>
         </motion.div>
       </div>
