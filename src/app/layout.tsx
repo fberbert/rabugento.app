@@ -18,6 +18,8 @@ const poppins = Poppins({
 
 /* ----- METADATA global da aplicação ----- */
 export const metadata: Metadata = {
+  // Base URL for resolving relative Open Graph and Twitter image URLs
+  metadataBase: new URL('https://rabugento.app'),
   title: "Rabugento.app | Seu assistente pessoal no WhatsApp",
   description:
     "Assistente pessoal inteligente no WhatsApp para controle de finanças, tarefas, lembretes e listas de compras. Direto e sem enrolação.",
