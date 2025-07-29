@@ -1,0 +1,81 @@
+name: Deploy at Two via SSH
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy_two:
+    name: Deploy via SSH
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.17.1'
+
+      - name: Install Frontend dependencies and Build
+        run: |
+          npm install
+          npm run build
+
+      - name: Tar Frontend build artifacts
+        run: |
+          tar -czf build.tar.gz .next/ public/ package.json package-lock.json next.config.ts ecosystem.config.js
+
+      - name: Prepare Frontend Destination
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            set -e
+
+            # === Deploy Frontend - Preparação ===
+            # Limpa o diretório frontend para um novo build
+            rm -rf /home/fabio/projetos/rabugento.app/.next \
+                   /home/fabio/projetos/rabugento.app/public \
+                   /home/fabio/projetos/rabugento.app/package.json \
+                   /home/fabio/projetos/rabugento.app/package-lock.json \
+                   /home/fabio/projetos/rabugento.app/next.config.ts \
+                   || true
+
+
+      - name: Transfer Frontend Build and Restart PM2
+        uses: appleboy/scp-action@v0.1.7 # Usa SCP para transferir arquivos
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "build.tar.gz" # Onde o tar.gz foi criado no runner
+          target: "/home/fabio/projetos/rabugento.app" # Onde será copiado no servidor
+
+      - name: Unpack Frontend Build and Restart PM2
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            set -e
+            if [ ! -f /home/fabio/projetos/rabugento.app/build.tar.gz ]; then
+              echo "File build.tar.gz não encontrado em /home/fabio/projetos/rabugento.app/. Abortando descompactação."
+              exit 1
+            fi
+
+            cd /home/fabio/projetos/rabugento.app
+            tar -xzf build.tar.gz
+            rm build.tar.gz
+            
+            # Reinicia o frontend com PM2, ou inicia se não estiver rodando
+            pm2 restart rabugento.app || pm2 start npm --name "rabugento.app" -- run start
+            pm2 save
+            echo "Frontend deployment completed successfully!"
