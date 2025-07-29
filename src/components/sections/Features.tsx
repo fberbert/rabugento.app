@@ -9,6 +9,10 @@ import {
   CheckSquare,
   Clock,
   Search,
+  CloudDrizzle,
+  MapPin,
+  SquarePlay,
+  NotepadText
 } from "lucide-react";
 
 const container = {
@@ -73,6 +77,41 @@ export default function Features() {
       description:
         "Faça pesquisas rápidas usando comandos diretos, sem precisar sair do WhatsApp.",
       example: "qual a previsão do tempo em São Paulo amanhã?",
+    },
+    { icon: (
+      <CloudDrizzle className="h-10 w-10 text-blue-800 dark:text-blue-400" />
+    ),
+      title: "Previsão do Tempo",
+      description:
+        "Consulte a previsão do tempo para qualquer local, direto no WhatsApp.",
+      example: "qual a previsão do tempo em Brasília amanhã?",
+    },
+    {
+      icon: (
+        <MapPin className="h-10 w-10 text-blue-800 dark:text-blue-400" />
+      ),
+      title: "Distância entre Locais",
+      description:
+        "Descubra a distância entre dois endereços ou locais com um simples comando.",
+      example: "qual a distância entre a Avenida Paulista e o Parque    Ibirapuera?",
+    },
+    {
+      icon: (
+        <SquarePlay className="h-10 w-10 text-blue-800 dark:text-blue-400" />
+      ),
+      title: "Resumos de Vídeos",
+      description:
+        "Sem tempo? Receba resumos de vídeos do YouTube, facilitando o consumo de conteúdo. Basta enviar o link do vídeo.",
+      example: "https://www.youtube.com/watch?v=exemplo",
+    },
+    {
+      icon: (
+        <NotepadText className="h-10 w-10 text-blue-800 dark:text-blue-400" />
+      ),
+      title: "Anotações",
+      description:
+        "Faça anotações e acesse-as facilmente quando precisar. Você pode registrar eventos importantes, documentos, conquistas etc.",
+      example: "anota o CPF da Flávia: 123.456.789-00",
     },
   ];
 

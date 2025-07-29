@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import { MessageCircle, Check, Users, ThumbsUp } from "lucide-react";
+import { MessageCircle, Check, Users, ThumbsUp, Mic, Volume2 } from "lucide-react";
 
 const container = {
   hidden: { opacity: 0 },
@@ -52,6 +52,16 @@ export default function Differentials() {
       icon: <ThumbsUp className="h-8 w-8 text-blue-800 dark:text-blue-400" />,
       title: "Versatilidade",
       description: "Converse naturalmente, sem a necessidade de comandos complexos. O Rabugento entende você.",
+    },
+    {
+      icon: <Mic className="h-8 w-8 text-blue-800 dark:text-blue-400" />,
+      title: "Interação por Voz",
+      description: "Você pode enviar mensagens tanto de voz quanto de texto, tornando a experiência mais fluida.",
+    },
+    {
+      icon: <Volume2 className="h-8 w-8 text-blue-800 dark:text-blue-400" />,
+      title: "Respostas por Áudio",
+      description: "O Rabugento pode responder suas perguntas com mensagens de áudio, basta você pedir.",
     },
   ];
 
