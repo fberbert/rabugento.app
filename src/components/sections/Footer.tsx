@@ -56,6 +56,17 @@ export default function Footer() {
           <p className="text-gray-400">
             &copy; {new Date().getFullYear()} Rabugento.app. Todos os direitos reservados.
           </p>
+          <p className="text-gray-400 mt-2">
+            Acesse o código fonte deste site no 
+            <a
+              href="https://github.com/fberbert/rabugento.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors underline ml-1"
+            >
+              GitHub
+            </a>
+          </p>
         </div>
       </div>
     </footer>

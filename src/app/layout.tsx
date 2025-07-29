@@ -33,19 +33,22 @@ export const metadata: Metadata = {
     siteName: "Rabugento.app",
     images: [
       {
-        url: "/images/rabugento-blue-no-text.svg",
+        url: "https://rabugento.app/site-rabugento.png",
         width: 1200,
         height: 630,
-        alt: "Logo Rabugento.app"
+        alt: "Rabugento.app logo"
       }
     ],
+    locale: "pt_BR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Rabugento.app | Seu assistente pessoal no WhatsApp",
     description: "Assistente pessoal inteligente no WhatsApp para controle de finanças, tarefas, lembretes e listas de compras. Direto e sem enrolação.",
-    images: ["/images/rabugento-blue-no-text.svg"],
+    images: ["https://rabugento.app/site-rabugento.png"],
+    site: "@rabugentoapp",
+    creator: "@rabugentoapp"
   },
 };
 
