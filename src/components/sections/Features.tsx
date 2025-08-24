@@ -76,7 +76,7 @@ export default function Features() {
       title: "Pesquisas na Internet",
       description:
         "Faça pesquisas rápidas usando comandos diretos, sem precisar sair do WhatsApp.",
-      example: "qual a previsão do tempo em São Paulo amanhã?",
+      example: "quando é o próximo jogo do Flamengo?",
     },
     { icon: (
       <CloudDrizzle className="h-10 w-10 text-blue-800 dark:text-blue-400" />
